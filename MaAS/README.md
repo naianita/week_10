@@ -152,4 +152,8 @@ For writing up the project:
     - Root causes of the 5 easiest failures.
     - Why the 5 hardest successes work.
     - Whether failures are due to missing operators vs. search / base LLM behavior.
+    - 
+    ## 📚 Citation
+
+    https://github.com/bingreeky/MaAS
 
