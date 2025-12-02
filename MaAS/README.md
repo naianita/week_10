@@ -20,32 +20,78 @@ Building on this concept, we propose **MaAS**, which dynamically samples multi-a
 
 ## 🏃‍♂️‍➡️ Quick Start
 
-### 📊 Datasets
+### 🔬 Course Project: HellaSwag Experiment (This Repo)
 
-Please download the  `GSM8K`,  `HumanEval`, `MATH`datasets and place it in the `maas\ext\maas\data` folder. The file structure should be organized as follows:
+This fork has been adapted to run MaAS on the **HellaSwag** benchmark (small validation subset) for a course project. The key additions are:
 
+- `maas/ext/maas/benchmark/hellaswag.py` – HellaSwag benchmark class.
+- `maas/ext/maas/scripts/download_hellaswag.py` – downloads and prepares a small HellaSwag validation subset.
+- `run_hellaswag_maas.py` – lightweight runner that bypasses the MetaGPT config stack.
+- `maas/ext/maas/scripts/optimized/HellaSwag/**` – train/test graphs and operators for HellaSwag.
+- `maas/ext/maas/scripts/analyze_hellaswag_results.py` – finds 5 easiest failures and 5 hardest successes.
+- `hellaswag_analysis.md` – written analysis of the HellaSwag runs and multi‑agent systems.
+
+From the `MaAS` directory on Windows:
+
+```powershell
+# 1) Create and activate a virtual environment
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+
+# 2) Install dependencies
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+
+# 3) Download a small HellaSwag validation subset
+python -m maas.ext.maas.scripts.download_hellaswag
+
+# 4) Set OpenAI API key (example)
+$env:OPENAI_API_KEY = "sk-..."          # replace with your key
+$env:OPENAI_MODEL   = "gpt-4o-mini"     # or another compatible model
+
+# 5) Train MaAS controller on HellaSwag (Graph mode)
+python run_hellaswag_maas.py --mode Graph --sample 1 --batch_size 1 --max_examples 20
+
+# 6) Evaluate on HellaSwag (Test mode)
+python run_hellaswag_maas.py --mode Test  --sample 1 --batch_size 1 --max_examples 20
+
+# 7) Analyze results: 5 easiest failures & 5 hardest successes
+python -m maas.ext.maas.scripts.analyze_hellaswag_results `
+  --log_root "maas/ext/maas/scripts/optimized/HellaSwag/test/round_1" `
+  --trace_file "maas/ext/maas/data/hellaswag_traces.jsonl" `
+  --top_k 5
 ```
+
+The last command prints the problems, expected labels, MaAS predictions, and the sampled multi‑agent architectures (layers and operators) used for each example. The written discussion of these results lives in `hellaswag_analysis.md`.
+
+---
+
+### 📊 Original Datasets (Upstream MaAS)
+
+For the original MaAS experiments, please download the `GSM8K`, `HumanEval`, and `MATH` datasets and place them in the `maas\ext\maas\data` folder. The file structure should be organized as follows:
+
+```text
 data
 └── gsm8k_train.jsonl
 └── gsm8k_test.jsonl
-└── ......
+└── ...
 ```
 
-### 🔑 Add API keys
+### 🔑 Add API keys (Upstream MaAS)
 
-You can configure `~/.metagpt/config2.yaml` according to the example.yaml. Or you can configure `~/config/config2.yaml`.
+You can configure `~/.metagpt/config2.yaml` according to the example.yaml, or `~/config/config2.yaml`:
 
-```python
+```yaml
 llm:
-  api_type: "openai" 
-  model: "gpt-4o-mini" 
+  api_type: "openai"
+  model: "gpt-4o-mini"
   base_url: ""
   api_key: ""
 ```
 
-### 🐹 Run the code
+### 🐹 Run the original HumanEval example
 
-The code below verifies the experimental results of the `HumanEval` dataset.
+The code below (from the upstream project) verifies the experimental results of the `HumanEval` dataset:
 
 ```bash
 python -m examples.maas.optimize --dataset HumanEval --round 1 --sample 4 --exec_model_name "gpt-4o-mini"
