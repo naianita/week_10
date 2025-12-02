@@ -1,0 +1,44 @@
+[
+    {
+        "question": "A person is playing bagpipes out in a park. A man and two boys watching from a far. the camera\nChoices:\nA) shoots areas all around the park while the bagpipes play.\nB) is covered to the boy that is playing there.\nC) then goes black and we see a black opening scene.\nD) watching the boy and boy as they play a game of drums.\n\nAnswer with the single letter (A, B, C, or D) of the correct choice.",
+        "right_answer": 0,
+        "model_output": "C",
+        "extracted_output": "C",
+        "extract_answer_code": "None"
+    },
+    {
+        "question": "A woman is sitting at a table in a fast food restaurant while eating. She continually speaks to nobody as she eats. she\nChoices:\nA) is then seen sitting alone as she eats a cold brown ice cream.\nB) pauses in the process of eating to enjoy her food.\nC) stands up and grabs her purse, continuing to talk and laugh as she leaves.\nD) picks up another chocolate bar and chews it as she talks.\n\nAnswer with the single letter (A, B, C, or D) of the correct choice.",
+        "right_answer": 2,
+        "model_output": "B",
+        "extracted_output": "B",
+        "extract_answer_code": "None"
+    },
+    {
+        "question": "A man is holding a pocket knife while sitting on some rocks in the wilderness. then he\nChoices:\nA) opens a can of oil put oil on the knife, and puts oil on a knife and press it through a can filled with oil then cuts several pieces from the sandwiches.\nB) takes a small stone from the flowing river and smashes it on another stone.\nC) uses the knife to shave his leg.\nD) sand the rocks and tops them by using strong pressure.\n\nAnswer with the single letter (A, B, C, or D) of the correct choice.",
+        "right_answer": 1,
+        "model_output": "C",
+        "extracted_output": "C",
+        "extract_answer_code": "None"
+    },
+    {
+        "question": "A man is standing in front of a camera. He starts playing a harmonica for the camera. he\nChoices:\nA) begins to play the harmonica with his body while looking at the camera.\nB) seems to be singing while playing the harmonica.\nC) rocks back and forth to the music as he goes.\nD) painted a fence in front of the camera.\n\nAnswer with the single letter (A, B, C, or D) of the correct choice.",
+        "right_answer": 2,
+        "model_output": "B",
+        "extracted_output": "B",
+        "extract_answer_code": "None"
+    },
+    {
+        "question": "Then he takes a piece of bark and rubs the powered stone pieces onto it. The stone particles stick to the wet piece of wood. he\nChoices:\nA) uses a small brush to polish one of the stone pieces.\nB) then uses a strip of sealing tape to seal the board and then smooths the bottom of the board.\nC) walks towards the camera.\nD) then takes the knife and sharpens it against the wood piece.\n\nAnswer with the single letter (A, B, C, or D) of the correct choice.",
+        "right_answer": 3,
+        "model_output": "B",
+        "extracted_output": "B",
+        "extract_answer_code": "None"
+    },
+    {
+        "question": "They get into formation, then begin dancing and flipping as male cheerleaders join them. They all continue dancing and flipping, doing hand springs. when they\nChoices:\nA) are done, they shake hands and walk away, but cheers are heard all around as they're finished.\nB) are finished, they jump up and down happily and walk off the stage, exhausted.\nC) are done, a male cheerleader is crowned and an instant replay is shown.\nD) come down from their workout, they all stop to bow and applaud, then they continue dancing.\n\nAnswer with the single letter (A, B, C, or D) of the correct choice.",
+        "right_answer": 1,
+        "model_output": "C",
+        "extracted_output": "C",
+        "extract_answer_code": "None"
+    }
+]

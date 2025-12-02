@@ -1,0 +1,11 @@
+# Python / env
+.venv/
+__pycache__/
+*.pyc
+
+# Logs and large artifacts
+MaAS/logs/
+MaAS/**/*.pth
+
+# Local caches
+MaAS/**/__pycache__/
