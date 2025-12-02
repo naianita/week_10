@@ -153,7 +153,7 @@ For writing up the project:
     - Why the 5 hardest successes work.
     - Whether failures are due to missing operators vs. search / base LLM behavior.
     - 
--##  Citation
+## Citation
 
     https://github.com/bingreeky/MaAS
 
